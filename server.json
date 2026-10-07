@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.programscape/programscape",
+  "title": "Programscape",
+  "description": "Startup credits, programs and perks that fit your company, from checked, sourced records.",
+  "repository": {
+    "url": "https://github.com/Deirfgeiz/programscape-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://programscape.com/claude",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://programscape.com/api/mcp"
+    }
+  ]
+}
