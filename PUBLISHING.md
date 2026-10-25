@@ -11,6 +11,9 @@ An update is complete only when each changed surface has been checked publicly.
 3. Run the signed-in save/read check with an account meant for verification: save a plan, start a fresh client
    session, sign in to the same account, and read back the saved values using its explicit `planId`. Verify that
    other plans remain unchanged, and remove the verification plan when finished.
+   For an account with several plans, verify that an unselected `my_plan` returns a tool result with `isError: true`
+   and `structuredContent.selectionRequired: true`, including named choices. The client should ask which company
+   to use, retain its previously cached plan data, and retry with the chosen `planId`.
 4. Merge the matching public README and manifest change. Do not describe a proposed capability as deployed.
 
 The hosted URL serves the deployed implementation to all clients. A client may cache tool definitions; refresh
@@ -52,7 +55,9 @@ listing edits; pending edits do not establish that the public listing changed.
 2. Open the existing Programscape submission. Keep its URL, slug, documentation URL and privacy URL stable.
 3. Update the displayed tool list to match the public `tools/list` result and the README. Include `report_balance`.
    Explain that portfolio deals require membership through the partner's invite link and administration requires
-   that list's admin access.
+   that list's admin access. Reviewer instructions should cover the structured company-selection tool error:
+   `isError: true` with `structuredContent.selectionRequired: true` means to ask which named company to use and
+   retry with its `planId`, retaining any cached plan data until the selection succeeds.
 4. Keep authentication **Required when the server asks**, with dynamic client registration. Catalog tools answer
    without sign-in; plan and partner tools request it when needed.
 5. Submit the edit, then check both portal status and the public listing after approval. Record pending review or

@@ -81,8 +81,10 @@ as an estimate and never sets a program's expiration date.
 
 ### Continuing a saved plan
 
-Call `my_plan` with `{}` to read a single available plan. When it returns `selectionRequired: true`, it gives named
-plan choices without choosing one. Use the chosen ID in later calls:
+Call `my_plan` with `{}` to read a single available plan. When several plans are available, the MCP tool result sets
+`isError: true` and includes `structuredContent.selectionRequired: true` with named plan choices. Clients should
+inspect those structured choices, ask which company the founder means, retain any previously cached plan data,
+and retry with the chosen `planId`. Use that ID in later calls:
 
 ```json
 { "planId": "<chosen-plan-id>" }
