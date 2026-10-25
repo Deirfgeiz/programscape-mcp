@@ -63,16 +63,17 @@ The same hosted service answers every client at this URL; there is no hosted pac
 | `get_program` | Returns one program's record: what it offers, who decides, exclusions, sources and the date checked | No |
 | `compare_programs` | Returns programs that serve the same goal across providers, side by side, with no winner | No |
 | `whats_changed` | Returns what the latest checks against providers' own pages found | No |
-| `save_plan_draft` | Saves a review as a one-day draft and returns a link to keep it on programscape.com | No |
+| `save_plan_draft` | Before sign-in, saves a review as a one-day draft and returns a link to keep it on programscape.com | No |
 | `my_plan` | Returns the founder's saved plan and its current review, with saved application progress and reported balances | Yes |
 | `update_my_plan` | Saves the answers, program choices and application progress the founder supplies. Your assistant asks you before each save | Yes |
 | `report_balance` | Records what a provider shows as left on one kept, approved program, in the provider's unit, with the reading time and who reported it; optionally sets a low-balance reminder | Yes |
 | `portfolio_perks` | For a founder who joined a venture firm's or studio's perks through its invite link: returns that portfolio's deals, labelled as the partner's terms. Joining no portfolio returns no portfolio deals | Yes |
 | `partner_perks_admin` | For an admin of a partner's perks list: returns what needs a look. Founders who are not admins cannot read that list's administration details | Yes |
 
-There are 12 tools. Catalog search, comparisons and a new review work without an account. Sign-in gives a tool
-access only to the plans and partner lists that account may read or edit. If several plans are available, choose a
-plan from the returned choices and send its `planId` when reading or saving it.
+The connector lists 12 tools before sign-in and 11 afterward, when the temporary draft tool is replaced by direct
+saves to the account's plan. Catalog search, comparisons and a new review work without an account. Sign-in gives a
+tool access only to the plans and partner lists that account may read or edit. If several plans are available,
+choose a plan from the returned choices and send its `planId` when reading or saving it.
 
 An application marked approved records what the founder reported; the provider still decides. Reported balances
 stay separate from awards and from other programs. A runway estimate from the founder's local router is labelled
@@ -108,8 +109,10 @@ if someone else changed the plan in between. For example, after the founder repo
 
 Progress includes `pursuit`, `nextAction`, `reportedResult`, `resultNote` and lifecycle dates (`submittedOn`,
 `approvedOn`, `declinedOn`, `startedOn`, `expiresOn`). A supplied `null` clears that field; omitted fields keep their
-saved values. Readback labels progress as reported by the plan's team. It does not verify a provider decision.
-Awards, balances and reminder numbers have their own controls; progress patches cannot change them.
+saved values. The save receipt returns the saved version, when it was updated, who last saved it and the progress
+fields that changed. Readback labels progress as reported by the plan's team, including the history of programs
+set aside. It does not verify a provider decision. Awards, balances and reminder numbers have their own controls;
+progress patches cannot change them.
 
 ## Sign-in
 
