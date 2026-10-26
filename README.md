@@ -142,6 +142,9 @@ version during MCP `initialize`; router versions belong to the npm package above
 not a separate hosted installation. [Publishing and verification](PUBLISHING.md) explains how these surfaces are
 kept current.
 
+[Hosted MCP 1.1.0 release and production verification](docs/releases/1.1.0.md) records the verified public versions,
+the automated save/read checks and their limits, and the separate Claude listing status.
+
 ## What it never does
 
 - Say you qualify for a program. The provider decides.

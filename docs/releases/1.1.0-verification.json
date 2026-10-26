@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "run": "40262164954",
+  "attempt": "1",
+  "expectedRevision": "082d782c5a06149e09f95ebcd153ebee145ea31c",
+  "status": "pass",
+  "phase": "complete",
+  "corePassed": true,
+  "cases": [
+    "test_identity_authenticated",
+    "initial_account_empty",
+    "signed_in_inventory",
+    "named_plan_selection",
+    "ambiguous_write_refused",
+    "progress_save_receipt",
+    "unchanged_save_preserved",
+    "fresh_authorization_read",
+    "website_read_agrees",
+    "other_plan_unchanged",
+    "stale_version_refused",
+    "result_clear_preserved_other_fields"
+  ],
+  "runtime": {
+    "nodeVersion": "v22.23.4",
+    "revision": "082d782c5a06149e09f95ebcd153ebee145ea31c"
+  },
+  "cleanup": {
+    "attempted": true,
+    "plansRemoved": 2,
+    "remainingPlans": 0,
+    "grantsRevoked": true,
+    "revokedAccessTokensRefused": 2,
+    "authIdentityRemoved": true,
+    "complete": true
+  },
+  "authentication": "CI-provisioned disposable identity; normal session and OAuth APIs",
+  "limit": "Does not test email delivery, a human consent click or the Claude directory submission; backups follow existing retention."
+}

@@ -1,0 +1,88 @@
+{
+  "serverName": "Programscape",
+  "oneLiner": "Ask which startup credits, programs and perks fit your company, answered from checked records with official sources.",
+  "description": "Programscape is an independent map of startup credits, programs and perks: cloud and AI credits, accelerator\nprograms and product discounts from AWS, Google Cloud, Microsoft Azure, OpenAI, Anthropic, NVIDIA, Stripe and more.\nEvery record carries its official source and the date it was last checked. Providers can't pay for placement.\n\nTell Claude your stage, your funding, the tools you use and what kind of company you are. It returns the review\nProgramscape would show you: the programs worth your time now, the question that settles each one, and what can\nwait and why. It reports each program's standing as it is. It never says you qualify, because the provider\ndecides. It never adds amounts into a total, and it never picks a winning provider.\n\nSearching, comparing and building a review work without an account. To keep a plan, sign in to Programscape once\nwith an email code or Google. There's no password. Claude can then read your saved plan, save your answers and the\nprograms you choose and the application progress you report when you ask, and pick up where you left off next\ntime. When more than one plan is available, you choose which company to read or update. Programscape can email you when a\nprogram you kept changes its terms, or when a new one fits.\n\nProvider balances you report for a kept, approved program are saved in the provider's unit, with when they were\nread and who reported them. Balances are separate from awards and are never totalled.\n\nIf you joined your venture firm's or studio's perks through its Programscape invite link, Claude shows those deals\nin their own section, labelled as the partner's terms. Only that list's admins can ask what needs a look on it.",
+  "documentationUrl": "https://programscape.com/claude",
+  "privacyPolicyUrl": "https://programscape.com/privacy",
+  "supportUrl": "https://programscape.com/suggest",
+  "authenticationRequirement": "Required when the server asks",
+  "authenticationMethod": "OAuth with dynamic client registration",
+  "company": "FORGOTTEN THINGS LABS LLC",
+  "companyWebsite": "https://programscape.com",
+  "remoteUrl": "https://programscape.com/api/mcp",
+  "tools": [
+    {
+      "name": "build_route",
+      "signIn": false,
+      "readOnly": true,
+      "destructive": false
+    },
+    {
+      "name": "profile_questions",
+      "signIn": false,
+      "readOnly": true,
+      "destructive": false
+    },
+    {
+      "name": "search_programs",
+      "signIn": false,
+      "readOnly": true,
+      "destructive": false
+    },
+    {
+      "name": "get_program",
+      "signIn": false,
+      "readOnly": true,
+      "destructive": false
+    },
+    {
+      "name": "compare_programs",
+      "signIn": false,
+      "readOnly": true,
+      "destructive": false
+    },
+    {
+      "name": "whats_changed",
+      "signIn": false,
+      "readOnly": true,
+      "destructive": false
+    },
+    {
+      "name": "save_plan_draft",
+      "signIn": false,
+      "readOnly": false,
+      "destructive": false
+    },
+    {
+      "name": "my_plan",
+      "signIn": true,
+      "readOnly": true,
+      "destructive": false
+    },
+    {
+      "name": "update_my_plan",
+      "signIn": true,
+      "readOnly": false,
+      "destructive": true
+    },
+    {
+      "name": "report_balance",
+      "signIn": true,
+      "readOnly": false,
+      "destructive": false
+    },
+    {
+      "name": "portfolio_perks",
+      "signIn": true,
+      "readOnly": true,
+      "destructive": false
+    },
+    {
+      "name": "partner_perks_admin",
+      "signIn": true,
+      "readOnly": true,
+      "destructive": false
+    }
+  ],
+  "reviewerCompanySelection": "For an account with several plans, an unselected my_plan returns an MCP tool result with isError:true and structuredContent.selectionRequired:true, with named plan choices. Inspect those structured choices, ask which company the founder means, retain previously cached plan data, then retry with the selected planId. Use that id for later reads and writes."
+}
